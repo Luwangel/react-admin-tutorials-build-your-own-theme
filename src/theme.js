@@ -98,6 +98,10 @@ const rawTheme = {
     },
   },
 
+  shape: {
+    borderRadius: 0,
+  },
+
   overrides: {
     // React-Admin
     RaAppBar: {
@@ -115,7 +119,6 @@ const rawTheme = {
     },
     MuiCard: {
       root: {
-        borderRadius: 0,
         border: "none",
       },
     },
@@ -126,7 +129,6 @@ const rawTheme = {
         paddingRight: defaultMuiTheme.spacing(4),
         paddingBottom: defaultMuiTheme.spacing(1),
         paddingLeft: defaultMuiTheme.spacing(4),
-        borderRadius: defaultMuiTheme.spacing(4),
       },
       sizeSmall: {
         paddingTop: defaultMuiTheme.spacing(0),
@@ -232,7 +234,6 @@ const rawTheme = {
     },
     RaTabbedShowLayout: {
       content: {
-        borderRadius: defaultMuiTheme.shape.borderRadius,
         marginTop: defaultMuiTheme.spacing(4),
         backgroundColor: palette.common.white,
         boxShadow: defaultMuiTheme.shadows[3],
@@ -257,7 +258,6 @@ const rawTheme = {
           borderStyle: "solid",
           borderWidth: "2px",
           borderColor: palette.grey[300],
-          borderRadius: defaultMuiTheme.shape.borderRadius,
           textTransform: "uppercase",
           fontWeight: typography.fontWeightBold,
           color: palette.primary.main,
