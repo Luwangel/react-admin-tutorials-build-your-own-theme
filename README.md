@@ -7,7 +7,7 @@
   </tr>
 </table>
 
-[Screenshot](./assets/final-result.png)
+![Screenshot](./assets/final-result.png)
 
 ## How to run
 
