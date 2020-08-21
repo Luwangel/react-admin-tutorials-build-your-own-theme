@@ -15,10 +15,10 @@ const palette = createPalette(
   })
 );
 
-const typographyBase = {
+const typography = {
   fontFamilySecondary: "'Poppins', sans-serif",
   fontFamily: '"Comic Neue", cursive',
-  fontSize: 14,
+  fontSize: 16,
   fontStyle: "normal",
   fontWeightLight: 400,
   fontWeightRegular: 500,
@@ -27,20 +27,28 @@ const typographyBase = {
   color: palette.text.primary,
 };
 
+const typographyBase = {
+  fontFamily: typography.fontFamily,
+  fontSize: typography.fontSize,
+  fontStyle: typography.fontStyle,
+  color: typography.color,
+};
+
 const typographyHeader = {
   ...typographyBase,
-  fontWeight: typographyBase.fontWeightBold,
-  fontFamily: typographyBase.fontFamilySecondary,
+  fontWeight: typography.fontWeightBold,
+  fontFamily: typography.fontFamilySecondary,
 };
 
 const typographyBody = {
   ...typographyBase,
-  fontWeight: typographyBase.fontWeightRegular,
-  fontFamily: typographyBase.fontFamily,
+  fontWeight: typography.fontWeightRegular,
+  fontFamily: typography.fontFamily,
 };
 
 const rawTheme = {
   palette,
+
   typography: {
     ...typographyBase,
     h1: {
@@ -63,12 +71,12 @@ const rawTheme = {
     },
     h5: {
       ...typographyHeader,
-      fontWeight: typographyBase.fontWeightMedium,
+      fontWeight: typography.fontWeightMedium,
       fontSize: "1.5rem",
     },
     h6: {
       ...typographyHeader,
-      fontWeight: typographyBase.fontWeightMedium,
+      fontWeight: typography.fontWeightMedium,
       fontSize: "1.25rem",
     },
     body1: {
@@ -89,11 +97,12 @@ const rawTheme = {
       fontStyle: "italic",
     },
   },
+
   overrides: {
     // React-Admin
     RaAppBar: {
       title: {
-        textTransform: "uppercase",
+        textTransform: "capitalize",
       },
     },
 
@@ -110,24 +119,69 @@ const rawTheme = {
         border: "none",
       },
     },
+    MuiButton: {
+      root: {
+        color: palette.primary.main,
+        paddingTop: defaultMuiTheme.spacing(1),
+        paddingRight: defaultMuiTheme.spacing(4),
+        paddingBottom: defaultMuiTheme.spacing(1),
+        paddingLeft: defaultMuiTheme.spacing(4),
+        borderRadius: defaultMuiTheme.spacing(4),
+      },
+      sizeSmall: {
+        paddingTop: defaultMuiTheme.spacing(0),
+        paddingRight: defaultMuiTheme.spacing(2),
+        paddingBottom: defaultMuiTheme.spacing(0),
+        paddingLeft: defaultMuiTheme.spacing(2),
+      },
+      sizeLarge: {
+        paddingTop: defaultMuiTheme.spacing(2),
+        paddingRight: defaultMuiTheme.spacing(6),
+        paddingBottom: defaultMuiTheme.spacing(2),
+        paddingLeft: defaultMuiTheme.spacing(6),
+      },
+      contained: {
+        boxShadow: "none",
+      },
+      containedPrimary: {
+        color: palette.common.white,
+        backgroundColor: palette.primary.main,
+      },
+      containedSecondary: {
+        color: palette.common.white,
+        backgroundColor: palette.secondary.main,
+      },
+      outlined: {},
+      outlinedPrimary: {
+        color: palette.primary.main,
+        borderColor: palette.primary.main,
+      },
+      outlinedSecondary: {
+        color: palette.common.white,
+        borderColor: palette.common.white,
+      },
+      text: {},
+      textPrimary: {
+        color: palette.primary.main,
+      },
+      textSecondary: {
+        color: palette.secondary.main,
+      },
+      label: {},
+    },
 
     // React-Admin
 
     RaSidebar: {
       drawerPaper: {
         backgroundColor: palette.common.white,
-        // color: palette.primary.main,
-        paddingTop: "3em",
-        height: `100%`,
-        // boxShadow: `2px 0px 1px -1px rgba(0,0,0,0.2),
-        //         1px 0px 3px 0px rgba(0,0,0,0.1)`,
+        color: palette.primary.main,
+        height: "100%",
+        boxShadow:
+          "2px 0px 1px -1px rgba(0,0,0,0.2), 1px 0px 3px 0px rgba(0,0,0,0.1)",
       },
     },
     RaMenuItemLink: {
-      root: {
-        color: palette.primary.main,
-        fontWeight: defaultMuiTheme.typography.fontWeightBold,
-      },
       active: {
         borderLeftStyle: "none",
         borderRightColor: palette.secondary.main,
@@ -135,12 +189,9 @@ const rawTheme = {
         borderRightStyle: "solid",
         backgroundColor: palette.action.selected,
         color: palette.primary.main,
-        "& svg": {
-          color: palette.primary.main,
-        },
       },
       icon: {
-        color: palette.primary.main,
+        color: "inherit",
       },
     },
     RaLayout: {
@@ -166,6 +217,15 @@ const rawTheme = {
           paddingLeft: defaultMuiTheme.spacing(3),
           [defaultMuiTheme.breakpoints.up("xs")]: {
             paddingLeft: defaultMuiTheme.spacing(6),
+          },
+        },
+      },
+    },
+    RaAppBar: {
+      toolbar: {
+        MuiIconButton: {
+          root: {
+            fontSize: "1.25rem",
           },
         },
       },
@@ -199,7 +259,7 @@ const rawTheme = {
           borderColor: palette.grey[300],
           borderRadius: defaultMuiTheme.shape.borderRadius,
           textTransform: "uppercase",
-          fontWeight: defaultMuiTheme.typography.fontWeightBold,
+          fontWeight: typography.fontWeightBold,
           color: palette.primary.main,
           paddingLeft: defaultMuiTheme.spacing(2),
           paddingRight: defaultMuiTheme.spacing(2),
