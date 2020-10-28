@@ -1,10 +1,16 @@
 # React-admin v3 Tutorial for Theming
 
 <table>
-  <tr>
-    <td><img width="60" src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/book.svg" alt="publication" /></td>
-    <td><strong>Archived Repository</strong><br /> The code of this repository was written to illustrate the blog post <a href="https://marmelab.com/blog/2020/09/01/react-admin-tutorials-build-your-own-theme.html">Changing The Look And Feel Of React-Admin Without JSX</a><br /><strong>This code is not intended to be used in production, and is not maintained.</strong></td>
-  </tr>
+    <tr>
+        <td><img width="60" src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/book.svg" alt="publication" /></td>
+        <td>
+            <strong>Archived Repository</strong>
+            <br />
+            The code of this repository was written to illustrate the blog post <a href="https://marmelab.com/blog/2020/09/01/react-admin-tutorials-build-your-own-theme.html">Changing The Look And Feel Of React-Admin Without JSX</a>
+            <br />
+            This code is <strong>not intended to be used in production</strong>, and is <strong>not maintained.</strong>
+        </td>
+    </tr>
 </table>
 
 ![Screenshot](./assets/final-result.png)
