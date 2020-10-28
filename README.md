@@ -1,4 +1,4 @@
-# React-admin v3 Tutorial for Theming
+# React-admin Tutorial - Changing The Look And Feel Of React-Admin Without JSX
 
 <table>
     <tr>
